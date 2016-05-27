@@ -5,8 +5,6 @@
 
 // importação da bibilioteca para utilizar valores aleatórios
 import java.util.Random;
-// importação da biblioteca para tratar Arrays (utilizada para ordenar o array rand3)
-import java.util.Arrays;
 
 class Q4 {
 	public static void main (String[] args){
@@ -20,11 +18,12 @@ class Q4 {
 		for(int i = 0; i < rand1.length; i++){
 			rand1[i] = randGen.nextInt(100) + 1;
 			rand2[i] = randGen.nextInt(100) + 1;
-			rand3[i] = rand1[i];
-			rand3[i+10] = rand2[i];
+			if(i%2 == 0){
+				rand3[i] = rand1[i];
+			}else{
+				rand3[i] = rand2[i];
+			}
 		}
-		// organiza o array rand3
-		Arrays.sort(rand3);
 		// imprime os arrays
 		for(int j: rand1){
 			System.out.println("Array 01 - " + j);
